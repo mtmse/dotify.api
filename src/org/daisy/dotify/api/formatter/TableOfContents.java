@@ -1,7 +1,5 @@
 package org.daisy.dotify.api.formatter;
 
-import java.util.Stack;
-
 /**
  * Provides methods needed to add a TOC to a formatter. Note
  * that adding contents outside of entries has no specified
@@ -36,10 +34,10 @@ public interface TableOfContents extends FormatterCore {
 	public void endEntryOnResumed();
 	
     /**
-     * Get the stack of entry-on-resumed elements.
+     * Get the entry-on-resumed.
      * 
-     * @return the entry-on-resumed stack.
+     * @return the entry-on-resumed.
      */
-    public Stack<? extends FormatterCore> getEntryOnResumedStack();
+    public FormatterCore getEntryOnResumed();
     
 }
