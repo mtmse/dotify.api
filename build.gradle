@@ -148,6 +148,12 @@ publishing {
 						name = 'Joel Håkansson'
 					}
 				}
+				developers {
+					developer {
+						id = 'paulrambags'
+						name = 'Paul Rambags'
+					}
+				}
 			}
 		}
 	}
