@@ -16,11 +16,6 @@ public interface TableOfContents extends FormatterCore {
 	 */
 	public void startEntry(String refId);
 	
-	/**
-	 * Ends the current entry.
-	 */
-	public void endEntry();
-	
     /**
 	 * Starts a new entry-on-resumed with the supplied properties.
 	 * 
@@ -29,15 +24,8 @@ public interface TableOfContents extends FormatterCore {
 	public void startEntryOnResumed(String range);
 	
 	/**
-	 * Ends the current entry-on-resumed.
+	 * Ends the current entry.
 	 */
-	public void endEntryOnResumed();
+	public void endEntry();
 	
-    /**
-     * Get the entry-on-resumed.
-     * 
-     * @return the entry-on-resumed.
-     */
-    public FormatterCore getEntryOnResumed();
-    
 }
