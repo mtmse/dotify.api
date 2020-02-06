@@ -16,12 +16,12 @@ public interface TableOfContents extends FormatterCore {
 	 */
 	public void startEntry(String refId);
 	
-    /**
+	/**
 	 * Starts a new entry-on-resumed with the supplied properties.
 	 * 
 	 * @param range the range of this entry on resumed
 	 */
-	public void startEntryOnResumed(String range);
+	public void startEntryOnResumed(TocEntryOnResumedRange range);
 	
 	/**
 	 * Ends the current entry.
