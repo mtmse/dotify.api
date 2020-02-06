@@ -1,5 +1,6 @@
 package org.daisy.dotify.api.formatter;
 
+import java.text.ParseException;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,7 +32,7 @@ public class TocEntryOnResumedRange {
 	/* the endRefId refers to the start of the last block in the range. It may be absent. */
 	private final Optional<String> endRefId;
 	
-	public TocEntryOnResumedRange(String range) {
+	public TocEntryOnResumedRange(String range) throws ParseException {
 		// parse the range
 		String startId = null;
 		String endId = null;
@@ -48,7 +49,7 @@ public class TocEntryOnResumedRange {
 			}
 		}
 		if (startId == null) {
-			throw new RuntimeException(String.format("Could not parse this range: %s", range));
+			throw new ParseException(String.format("Could not parse this range: %s", range), 0);
 		}
 		
 		this.startRefId = startId;
