@@ -1,7 +1,7 @@
 package org.daisy.dotify.api.formatter;
 
-import java.text.ParseException;
 import java.util.Optional;
+import org.daisy.dotify.api.obfl.ObflParserException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -17,7 +17,7 @@ import org.junit.Test;
 public class TocEntryOnResumedRangeTest {
 	
 	@Test
-	public void testStandardRange() throws ParseException {
+	public void testStandardRange() throws ObflParserException {
 		TocEntryOnResumedRange range = new TocEntryOnResumedRange("[ch_1,ch_2)");
 		assertEquals("ch_1", range.getStartRefId());
 		Optional<String> endRefId = range.getEndRefId();
@@ -26,7 +26,7 @@ public class TocEntryOnResumedRangeTest {
 	}
 	
 	@Test
-	public void testUnboundedRange() throws ParseException {
+	public void testUnboundedRange() throws ObflParserException {
 		TocEntryOnResumedRange range = new TocEntryOnResumedRange("[ch_1,)");
 		assertEquals("ch_1", range.getStartRefId());
 		Optional<String> endRefId = range.getEndRefId();
@@ -34,13 +34,13 @@ public class TocEntryOnResumedRangeTest {
 	}
 	
 	@Test(expected = UnsupportedOperationException.class)
-	public void testUnsupportedRange() throws ParseException  {
+	public void testUnsupportedRange() throws ObflParserException  {
 		TocEntryOnResumedRange range = new TocEntryOnResumedRange("[ch_1,ch_2]");
 		assertNotNull(range);
 	}
 	
-	@Test(expected = ParseException.class)
-	public void testInvalidRange() throws ParseException  {
+	@Test(expected = ObflParserException.class)
+	public void testInvalidRange() throws ObflParserException  {
 		TocEntryOnResumedRange range = new TocEntryOnResumedRange("[,)");
 		assertNotNull(range);
 	}

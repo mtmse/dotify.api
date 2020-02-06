@@ -1,9 +1,9 @@
 package org.daisy.dotify.api.formatter;
 
-import java.text.ParseException;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.daisy.dotify.api.obfl.ObflParserException;
 
 /**
  * <p>Defines a range of toc-entry-on-resumed elements</p>
@@ -32,7 +32,7 @@ public class TocEntryOnResumedRange {
 	/* the endRefId refers to the start of the last block in the range. It may be absent. */
 	private final Optional<String> endRefId;
 	
-	public TocEntryOnResumedRange(String range) throws ParseException {
+	public TocEntryOnResumedRange(String range) throws ObflParserException {
 		// parse the range
 		String startId = null;
 		String endId = null;
@@ -49,7 +49,7 @@ public class TocEntryOnResumedRange {
 			}
 		}
 		if (startId == null) {
-			throw new ParseException(String.format("Could not parse this range: %s", range), 0);
+			throw new ObflParserException(String.format("Could not parse this range: %s", range));
 		}
 		
 		this.startRefId = startId;
