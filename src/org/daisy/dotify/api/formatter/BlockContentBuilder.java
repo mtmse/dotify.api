@@ -89,7 +89,8 @@ public interface BlockContentBuilder {
 	 * Inserts an expression to evaluate.
 	 * @param exp the expression
 	 * @param t the text properties
+	 * @param numeralStyle the numeral style
 	 */
-	public void insertEvaluate(DynamicContent exp, TextProperties t);
+	public void insertEvaluate(DynamicContent exp, TextProperties t, NumeralStyle numeralStyle);
 
 }

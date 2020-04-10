@@ -46,4 +46,25 @@ public class NumeralStyleTest {
 	public void testNumeralStyleLeadingZero_02() {
 		assertEquals("10", NumeralStyle.DECIMAL_LEADING_ZERO.format(10));
 	}
+    
+    @Test
+    public void testNumeralStyleStringDefault() {
+		assertEquals("1", NumeralStyle.DEFAULT.format("1"));        
+		assertEquals("test", NumeralStyle.DEFAULT.format("test"));        
+    }
+
+    @Test
+	public void testNumeralStyleStringLowerRoman() {
+		assertEquals("iii", NumeralStyle.LOWER_ROMAN.format("3"));
+		assertEquals("iii", NumeralStyle.LOWER_ROMAN.format("3.0"));
+		assertEquals("iii", NumeralStyle.LOWER_ROMAN.format("3.499"));
+		assertEquals("iv", NumeralStyle.LOWER_ROMAN.format("3.5"));
+	}
+
+    @Test
+	public void testNumeralStyleStringLowerRomanWithInvalidInput() {
+        // this will produce a warning in the log but does not fail
+		assertEquals("test", NumeralStyle.LOWER_ROMAN.format("test"));
+	}
+
 }

@@ -1,5 +1,7 @@
 package org.daisy.dotify.api.formatter;
 
+import java.util.logging.Logger;
+
 
 /**
  * Defines numeral styles
@@ -45,8 +47,7 @@ public enum NumeralStyle {
 	/**
 	 * Formats the numeral with the given style
 	 * 
-	 * @param i
-	 *            the number
+	 * @param i the number
 	 * @return returns the formatted number
 	 */
 	public String format(int i) {
@@ -69,4 +70,44 @@ public enum NumeralStyle {
 				return "" + i;
 		}
 	}
+    
+	/**
+	 * Formats the string with the given style
+     * 
+     * If the formatting does not succeed, no exception is thrown, but
+     * a warning will be logged and the input will be returned
+	 * 
+	 * @param s the string
+	 * @return returns the formatted string
+	 */
+    public String format(String s) {
+        if (this == DEFAULT) {
+            return s;
+        }
+        Integer i = toInt(s);
+        if (i == null) {
+            Logger.getLogger(this.getClass().getCanonicalName()).warning("Failed to convert this string to an integer: " + s);
+            return s;
+        }
+        return format(i);
+    }
+    
+    /**
+     * Converts a string to an Integer
+     * Rounds double values to the nearest integer
+     * 
+     * @param s the string
+     * @return the Integer - returns null if the conversion does not succeed
+     */
+    private Integer toInt(String s) {
+        try {
+            double d = Double.parseDouble(s);
+            long l = Math.round(d);
+            if (Integer.MIN_VALUE <= l && l <= Integer.MAX_VALUE) {
+                return (int)l;
+            }
+        } catch (NumberFormatException e) {
+        }
+        return null;
+    }
 };
