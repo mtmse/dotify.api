@@ -46,7 +46,7 @@ public interface Context {
 	}
 
 	/**
-	 * Gets the page number (one based) of the context described the current context,
+	 * Gets the page number (one based) of the context described in the current context,
 	 * or null if not available.
 	 *  
 	 * For example, an entry in a table of contents or an end note are examples
@@ -56,6 +56,20 @@ public interface Context {
 	 * @return returns the meta page number
 	 */
 	public default Integer getMetaPage() {
+		return null;
+	}
+    
+	/**
+	 * Gets the page number (one based) of the first page of the content of the
+     * context described in the current context, or null if not available.
+	 *  
+	 * This method can be used in a toc-entry-on-resumed element to retrieve the
+     * first page number of the volume's content in the original context.
+	 * 
+	 * 
+	 * @return returns the meta first page number of the volume's content
+	 */
+	public default Integer getMetaVolumeFirstContentPage() {
 		return null;
 	}
 	
