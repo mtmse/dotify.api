@@ -1,5 +1,9 @@
 package org.daisy.dotify.api.formatter;
 
+import org.w3c.dom.Element;
+
+import java.util.Map;
+
 /**
  * Provides methods that supply content to a block.
  * 
@@ -92,4 +96,12 @@ public interface BlockContentBuilder {
 	 */
 	public void insertEvaluate(DynamicContent exp, TextProperties t);
 
+
+    /**
+     * Inserts an metadata element that could be used to add information required for
+     * external systems.
+     *
+     * @param metadata The metadata element.
+     */
+    public void insertMetadata(Map<String, String> metadata);
 }
