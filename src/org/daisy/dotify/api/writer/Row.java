@@ -20,11 +20,11 @@ public interface Row {
 	public Float getRowSpacing();
 
     /**
-     * This is an object that can be sent through the Dotify framework. This extra reference
-     * is not a part of the official PEF specification and used when the output is not meant for print.
+     * This is an object that can be sent through the Dotify framework.
      *
      * A use-case of this could be to have a external reference tag in the OBFL specification and then
-     * use it the writer to add information to the rows of the PEF.
+     * use it the writer to add information to the rows of the PEF. This extra reference is not a part
+     * of the official PEF specification and used when the output is not meant for print.
      *
      * @return External reference object
      */
