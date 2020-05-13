@@ -20,13 +20,15 @@ public interface Row {
 	public Float getRowSpacing();
 
     /**
-     * This is an object that can be sent through the Dotify framework.
+     * Get the external reference element.
      *
-     * A use-case of this could be to have a external reference tag in the OBFL specification and then
+     * <p>The returned object should be unchanged.</p>
+     *
+     * <p>A use-case of this could be to have a external reference tag in the OBFL specification and then
      * use it the writer to add information to the rows of the PEF. This extra reference is not a part
-     * of the official PEF specification and used when the output is not meant for print.
+     * of the official PEF specification and used when the output is not meant for print.</p>
      *
-     * @return External reference object
+     * @return The external reference object, not modified
      */
 	public Object getExternalReference();
 }
