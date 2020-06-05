@@ -151,7 +151,7 @@ public final class TextBlockProperties {
 	}
 	
 	/**
-	 * Get rught text indent, in characters
+	 * Get right text indent, in characters
 	 * @return returns the right text indent
 	 */
 	public int getRightTextIndent() {
