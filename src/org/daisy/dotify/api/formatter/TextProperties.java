@@ -49,15 +49,15 @@ public class TextProperties {
 			return this;
 		}
 
-                /**
-                 * Sets the markCapitalLetters value for this builder
-                 * @param value the value
-                 * @return returns this object
-                 */
-                public Builder markCapitalLetters(boolean value) {
-                    this.markCapitalLetters = value;
-                    return this;
-                }
+		/**
+		 * Sets the markCapitalLetters value for this builder
+		 * @param value the value
+		 * @return returns this object
+		 */
+		public Builder markCapitalLetters(boolean value) {
+			this.markCapitalLetters = value;
+			return this;
+		}
 
 		/**
 		 * Sets the translation mode for the builder
