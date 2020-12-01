@@ -435,7 +435,7 @@ public class BlockProperties implements Cloneable {
 		}
 
 		/**
-		 * Sets the display when expression
+		 * Sets the display-when expression
 		 *
 		 * @param value     Expression to decide if the block should be shown
 		 * @return returns this object
