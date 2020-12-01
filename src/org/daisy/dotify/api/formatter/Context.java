@@ -106,12 +106,4 @@ public interface Context {
 	public default Integer getSheetsInDocument() {
 		return null;
 	}
-
-	/**
-	 * Gets the current state of page position, if no other information have been printed
-	 * so far on this page it is true else false.
-	 *
-	 * @return  True if no other information is printed on this page so far.
-	 */
-	public default boolean isTopOfPage() { return false; }
 }

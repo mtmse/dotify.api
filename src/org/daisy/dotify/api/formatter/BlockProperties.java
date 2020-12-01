@@ -31,7 +31,7 @@ public class BlockProperties implements Cloneable {
 	private final TextBorderStyle textBorderStyle;
 	private final TextBlockProperties textBlockProps;
 	private final String underlineStyle;
-	private final DynamicContent displayWhen;
+	private final Condition displayWhen;
 
 	/**
 	 * The Builder is used when creating a BlockProperties instance.
@@ -65,7 +65,7 @@ public class BlockProperties implements Cloneable {
 		private TextBorderStyle textBorderStyle = null;
 		private String underlineStyle = null;
 		private TextBlockProperties.Builder textBlockPropsBuilder = new TextBlockProperties.Builder();
-		private DynamicContent displayWhen = null;
+		private Condition displayWhen = null;
 
 		/**
 		 * Create a new Builder
@@ -440,7 +440,7 @@ public class BlockProperties implements Cloneable {
 		 * @param value     Expression to decide if the block should be shown
 		 * @return returns this object
 		 */
-		public Builder displayWhen(DynamicContent value) {
+		public Builder displayWhen(Condition value) {
 			this.displayWhen = value;
 			return this;
 		}
@@ -643,7 +643,7 @@ public class BlockProperties implements Cloneable {
 	 *
 	 * @return returns the display when expression.
 	 */
-	public DynamicContent getDisplayWhen() {
+	public Condition getDisplayWhen() {
 	    return displayWhen;
 	}
 
